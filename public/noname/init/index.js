@@ -39,6 +39,12 @@ async function boot() {
   setWindowListener();
   setOnError({ lib, game, get, _status });
   await loadConfig();
+	// Give existing static-site users the bundled background once, but preserve
+	// every non-default background that a player has selected themselves.
+	if (get$1("image_background") === "default") {
+		set("image_background", "noname_bg");
+		game.saveConfig("image_background", "noname_bg");
+	}
   for (const name in get.config("translate")) {
     lib.translate[name] = get.config("translate")[name];
   }
