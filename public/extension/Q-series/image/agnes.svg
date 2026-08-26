@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="480" height="680" viewBox="0 0 480 680">
+  <defs>
+    <linearGradient id="background" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#18243a"/>
+      <stop offset="1" stop-color="#6f315f"/>
+    </linearGradient>
+  </defs>
+  <rect width="480" height="680" fill="url(#background)"/>
+  <circle cx="240" cy="232" r="112" fill="#e9c7b5"/>
+  <path d="M126 223c3-100 55-157 120-157 85 0 128 68 113 173-26-51-58-80-99-91-38 33-83 56-134 75z" fill="#202035"/>
+  <path d="M91 680c7-171 54-278 149-278s142 107 149 278z" fill="#25385d"/>
+  <path d="M141 455l99 96 99-96 36 225H105z" fill="#8f426f" opacity=".85"/>
+  <text x="240" y="610" fill="#fff" font-family="Georgia, serif" font-size="52" text-anchor="middle">Agnes</text>
+  <text x="240" y="648" fill="#edd9e8" font-family="sans-serif" font-size="24" text-anchor="middle">Q-SERIES</text>
+</svg>
