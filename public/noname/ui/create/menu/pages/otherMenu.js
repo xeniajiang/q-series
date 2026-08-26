@@ -2,7 +2,7 @@ import { menuContainer, menuxpages, clickContainer, menuUpdates } from "../index
 import "../../../../../noname.js";
 import { createApp } from "vue";
 import "../../../../util/sandbox.js";
-import dedent from "../../../../../vendor/pnpm/dedent@1.7.1/dedent/dist/dedent.js";
+import dedent from "../../../../../vendor/pnpm/dedent@1.7.1/modules/dedent/dist/dedent.js";
 import { ui } from "../../../index.js";
 import { lib } from "../../../../library/index.js";
 import { game } from "../../../../game/index.js";
