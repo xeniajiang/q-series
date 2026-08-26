@@ -1,7 +1,7 @@
 import { __vitePreload } from "../../_virtual/preload-helper.js";
 async function browserReady({ lib, game }) {
   lib.path = (await __vitePreload(async () => {
-    const { default: __vite_default__ } = await import("../../node_modules/.pnpm/path-browserify-esm@1.0.6/node_modules/path-browserify-esm/index.esm.js");
+    const { default: __vite_default__ } = await import("../../vendor/pnpm/path-browserify-esm@1.0.6/node_modules/path-browserify-esm/index.esm.js");
     return { default: __vite_default__ };
   }, true ? [] : void 0, import.meta.url)).default;
   try {
