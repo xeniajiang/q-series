@@ -9,57 +9,7 @@
     "dedent": "/vendor/pnpm/dedent@1.7.1/modules/dedent/dist/dedent.js"
   }
 }</script>
-  <script type="module">// src/entry.ts
-(async function() {
-  const scope = new URL("./", location.href).toString();
-  const globalText = {
-    SERVICE_WORKER_NOT_SUPPORT: ["\u65E0\u6CD5\u542F\u7528\u5373\u65F6\u7F16\u8BD1\u529F\u80FD", "\u60A8\u4F7F\u7528\u7684\u5BA2\u6237\u7AEF\u6216\u6D4F\u89C8\u5668\u4E0D\u652F\u6301\u542F\u7528serviceWorker"].join("\n"),
-    SERVICE_WORKER_LOAD_FAILED: ["\u65E0\u6CD5\u542F\u7528\u5373\u65F6\u7F16\u8BD1\u529F\u80FD", "serviceWorker\u52A0\u8F7D\u5931\u8D25"].join("\n")
-  };
-  if (!("serviceWorker" in navigator)) {
-    alert(globalText.SERVICE_WORKER_NOT_SUPPORT);
-    return;
-  }
-  if (sessionStorage.getItem("isJITReloaded") !== "true") {
-    let registrations = await navigator.serviceWorker.getRegistrations();
-    await registrations.find((registration) => registration?.active?.scriptURL == `${scope}service-worker.js`)?.unregister();
-    sessionStorage.setItem("isJITReloaded", "true");
-    window.location.reload();
-    return;
-  }
-  try {
-    await navigator.serviceWorker.register(`${scope}service-worker.js`, {
-      type: "module",
-      updateViaCache: "all",
-      scope
-    });
-    navigator.serviceWorker.addEventListener("message", (e) => {
-      if (e.data?.type === "reload") {
-        window.location.reload();
-      }
-    });
-    if (sessionStorage.getItem("canUseTs") !== "true") {
-      const path = "/jit-test.ts";
-      console.log((await import(
-        /* @vite-ignore */
-        path
-      )).text);
-      sessionStorage.setItem("canUseTs", "true");
-    }
-  } catch (e) {
-    if (sessionStorage.getItem("canUseTs") === "false") {
-      console.log("serviceWorker\u52A0\u8F7D\u5931\u8D25: ", e);
-    } else {
-      sessionStorage.setItem("canUseTs", "false");
-      window.location.reload();
-    }
-  }
-})();
-</script>
-
-
-
-	<meta charset="UTF-8" />
+<meta charset="UTF-8" />
 	<!-- 不自动检查电话号码 -->
 	<meta name="format-detection" content="telephone=no" />
 	<!-- 手机端网页不显示地址栏 -->
@@ -338,7 +288,7 @@
   <script type="module" crossorigin src="./noname/library/element/index.js"></script>
   <script type="module" crossorigin src="./noname/ui/create/menu/pages/exetensionMenu.js"></script>
   <script type="module" crossorigin src="./noname/ui/create/menu/pages/optionsMenu.js"></script>
-  <script type="module" crossorigin src="vue"></script>
+
   <script type="module" crossorigin src="./noname/ui/create/menu/pages/otherMenu.js"></script>
   <script type="module" crossorigin src="./noname/ui/create/menu/pages/startMenu.js"></script>
   <script type="module" crossorigin src="./noname/ui/create/index.js"></script>
@@ -360,8 +310,8 @@
   <script type="module" crossorigin src="./noname/library/experimental/index.js"></script>
   <script type="module" crossorigin src="./noname/library/update-urls.js"></script>
   <script type="module" crossorigin src="./noname/library/hooks/index.js"></script>
-  <script type="module" crossorigin src="vue"></script>
-  <script type="module" crossorigin src="vue"></script>
+
+
   <script type="module" crossorigin src="./noname/init/onload/OnloadSplash.vue2.js"></script>
   <script type="module" crossorigin src="./noname/init/onload/OnloadSplash.vue.js"></script>
   <script type="module" crossorigin src="./noname/init/onload/default-splash.js"></script>
