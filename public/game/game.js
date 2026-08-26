@@ -23,9 +23,9 @@
 	im.textContent = `{
   "imports": {
     "noname": "/noname.js",
-    "vue": "/vendor/pnpm/vue@3.5.28/node_modules/vue/dist/vue.esm-browser.js",
-    "pinyin-pro": "/vendor/pnpm/pinyin-pro@3.28.0/node_modules/pinyin-pro/dist/index.js",
-    "dedent": "/vendor/pnpm/dedent@1.7.1/node_modules/dedent/dist/dedent.js"
+    "vue": "/vendor/pnpm/vue@3.5.28/vue/dist/vue.esm-browser.js",
+    "pinyin-pro": "/vendor/pnpm/pinyin-pro@3.28.0/pinyin-pro/dist/index.js",
+    "dedent": "/vendor/pnpm/dedent@1.7.1/dedent/dist/dedent.js"
   }
 }`;
 	document.currentScript.after(im);
