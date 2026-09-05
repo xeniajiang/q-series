@@ -1,4 +1,4 @@
-var cryptoJs = { exports: {} };
+var coreJsBundle = {};
 export {
-  cryptoJs as __module
+  coreJsBundle as __exports
 };

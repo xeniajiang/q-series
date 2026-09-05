@@ -1,5 +1,5 @@
 import "../../../../../_virtual/_commonjsHelpers.js";
-import { __module as cryptoJs$1 } from "../../../../../_virtual/index6.js";
+import { __module as cryptoJs$1 } from "../../../../../_virtual/index5.js";
 import { __require as requireCore } from "./core.js";
 import { __require as requireX64Core } from "./x64-core.js";
 import { __require as requireLibTypedarrays } from "./lib-typedarrays.js";

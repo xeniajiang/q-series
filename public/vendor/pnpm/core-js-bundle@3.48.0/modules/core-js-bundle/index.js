@@ -1,5 +1,5 @@
 import { commonjsGlobal } from "../../../../../_virtual/_commonjsHelpers.js";
-import { __exports as coreJsBundle } from "../../../../../_virtual/index5.js";
+import { __exports as coreJsBundle } from "../../../../../_virtual/index6.js";
 var hasRequiredCoreJsBundle;
 function requireCoreJsBundle() {
   if (hasRequiredCoreJsBundle) return coreJsBundle;

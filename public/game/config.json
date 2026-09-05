@@ -194,10 +194,10 @@
 		"kyoani_bg",
 		"key_bg",
 		"xiaowu_bg",
+		"noname_bg",
 		"wuming_bg",
 		"zhulin_bg",
 		"shengshi_bg",
-		"taoyuan_bg",
 		"zhanhuo_bg",
 		"huangtian_bg",
 		"september_bg",
@@ -226,7 +226,7 @@
 	"player_border": "slim",
 	"radius_size": "reduce",
 	"image_character": "default",
-	"image_background": "default",
+	"image_background": "taoyuan_bg",
 	"asset_image": true,
 	"asset_font": true,
 	"card_font": "xiaozhuan",
@@ -594,5 +594,6 @@
 		]
 	],
 	"extension_Q-series_enable": true,
-	"equip_audio": false
+	"equip_audio": false,
+	"image_background_random": false
 }
