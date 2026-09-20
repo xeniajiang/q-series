@@ -587,14 +587,18 @@ async function getExtensionList() {
     await Promise.allSettled(promises);
     await game.promises.saveConfig("extensions", extensions);
   } else if (searchParamsImportExtension) {
-    extensions.push(searchParamsImportExtension);
-    toLoad.push(searchParamsImportExtension);
+    // The web package already bundles Q-series. Old shared URLs may still carry
+    // importExtensionName=Q-series, so avoid importing the same extension twice.
+    if (!extensions.includes(searchParamsImportExtension)) {
+      extensions.push(searchParamsImportExtension);
+      toLoad.push(searchParamsImportExtension);
+    }
     if (!has(`extension_${searchParamsImportExtension}_enable`)) {
       await game.promises.saveConfig(`extension_${searchParamsImportExtension}_enable`, true);
     }
     await game.promises.saveConfig("extensions", extensions);
   }
-  return toLoad;
+  return [...new Set(toLoad)];
 }
 function initSheet() {
   const player_style = get$1("player_style");
