@@ -564,7 +564,11 @@ async function getExtensionList() {
     }
     localStorage.setItem(lib.configprefix + "disable_extension", String(true));
   };
-  const extensions = get$1("extensions");
+  const configuredExtensions = get$1("extensions");
+  const extensions = [...new Set(configuredExtensions)];
+  if (extensions.length !== configuredExtensions.length) {
+    await game.promises.saveConfig("extensions", extensions);
+  }
   const toLoad = [];
   toLoad.addArray(get$1("plays").filter((i) => get$1("all").plays.includes(i)));
   toLoad.addArray(extensions);
